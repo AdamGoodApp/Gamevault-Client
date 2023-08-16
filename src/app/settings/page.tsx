@@ -1,13 +1,13 @@
 import type { ReactElement } from 'react'
 import Header from '@/components/Text/header'
 
-export default function Home(): ReactElement {
+export default function Settings(): ReactElement {
   return (
     <div className='h-screen ml-16 p-11'>
-      <Header>Home</Header>
-    
-      <div className="Library">
+      <Header>Settings</Header>
       
+      <div className="Library">
+        
       </div>
     </div>
   )
