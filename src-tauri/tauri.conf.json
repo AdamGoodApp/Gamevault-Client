@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "Neko Play",
-    "version": "0.2.0"
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -61,7 +61,12 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://tauri-update-server-kzom2ikyu-raisadamo.vercel.app/{{target}}/{{arch}}/{{current_version}}"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ4QzZBOTkwQjkwQkExRkYKUldUL29RdTVrS25HMkpDb3o1dUZwZlRmcHJCZW1pUWpxR2p5Z3pRZEpDTHEwOXh5K3BBN0RzbkgK%"
     },
     "windows": [
       {
