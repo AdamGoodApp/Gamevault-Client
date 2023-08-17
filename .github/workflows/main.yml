@@ -49,9 +49,14 @@ jobs:
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GAME_VAULT_URL: ${{ secrets.GAME_VAULT_URL }}
+          GAME_VAULT_USERNAME: ${{ secrets.GAME_VAULT_USERNAME }}
+          GAME_VAULT_PASSWORD: ${{ secrets.GAME_VAULT_PASSWORD }}
+          NEXT_PUBLIC_GAME_VAULT_URL: ${{ secrets.NEXT_PUBLIC_GAME_VAULT_URL }}
+          NEXT_PUBLIC_GAME_VAULT_USERNAME: ${{ secrets.NEXT_PUBLIC_GAME_VAULT_USERNAME }}
+          NEXT_PUBLIC_GAME_VAULT_PASSWORD: ${{ secrets. NEXT_PUBLIC_GAME_VAULT_PASSWORD }}
         with:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
           releaseName: 'App Name v__VERSION__' # tauri-action replaces \_\_VERSION\_\_ with the app version.
