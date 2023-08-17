@@ -63,10 +63,10 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://tauri-update-server-kzom2ikyu-raisadamo.vercel.app/{{target}}/{{arch}}/{{current_version}}"
+        "https://tauri-update-server-kzom2ikyu-raisadamo.vercel.app/update{{target}}/{{current_version}}"
       ],
       "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ4QzZBOTkwQjkwQkExRkYKUldUL29RdTVrS25HMkpDb3o1dUZwZlRmcHJCZW1pUWpxR2p5Z3pRZEpDTHEwOXh5K3BBN0RzbkgK%"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDg4NjY4MTkyQzEwQ0M0QTAKUldTZ3hBekJrb0ZtaUZ4dnhZRTUwSkhjUlkyM05rdVM1Vmt3MElUbXREdDVra2dPcTg1U2xzYk4K"
     },
     "windows": [
       {

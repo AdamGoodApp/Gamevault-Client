@@ -4,10 +4,6 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
-
-env:
-  TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-  TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
   
 jobs:
   release:
@@ -61,6 +57,8 @@ jobs:
           NEXT_PUBLIC_GAME_VAULT_URL: ${{ secrets.NEXT_PUBLIC_GAME_VAULT_URL }}
           NEXT_PUBLIC_GAME_VAULT_USERNAME: ${{ secrets.NEXT_PUBLIC_GAME_VAULT_USERNAME }}
           NEXT_PUBLIC_GAME_VAULT_PASSWORD: ${{ secrets. NEXT_PUBLIC_GAME_VAULT_PASSWORD }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
           releaseName: 'Neko Play v__VERSION__' # tauri-action replaces \_\_VERSION\_\_ with the app version.
