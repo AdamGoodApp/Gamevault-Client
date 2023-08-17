@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '@/components/Text/header'
 import GameCard from '@/components/GameCard';
 
@@ -47,20 +47,37 @@ const libraryEntries: LibraryEntry[] = [
   },
 ];
 
-export default function Library(): ReactElement {
+async function getGames() {
+  const authHeader = 'Basic ' + btoa(process.env.GAME_VAULT_USERNAME + ':' + process.env.GAME_VAULT_PASSWORD);
+  const res = await fetch(`${process.env.GAME_VAULT_URL}/api/v1/games`, {
+    headers: {
+      'Authorization': authHeader,
+    },
+    // next: { revalidate: 3600 },
+    cache: 'no-store'
+  })
+ 
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+
+export default async function Library(): Promise<ReactElement> {
+  const { data } = await getGames()
+
   return (
-    <div className='h-screen ml-16 overflow-scroll p-11'>
+    <div className='h-screen px-5 ml-16 overflow-scroll py-11 sm:p-11'>
       <Header>Library</Header>
       
-      <div className='flex flex-row flex-wrap gap-7'>
+      <div className='flex flex-row flex-wrap gap-y-7 sm:gap-7'>
         {
-          libraryEntries.map((entry, index) => { 
+          data.map((game: Game) => { 
             return (
               <GameCard 
-                image={entry.backdropUrl}
-                title={entry.name}
-                downloadPath={entry.itemUrl}
-                key={index}
+                game={game}
+                key={game.id}
               />
             )
           })

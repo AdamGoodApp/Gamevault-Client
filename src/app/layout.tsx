@@ -2,8 +2,10 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import { ReduxProviders } from "@/redux/provider";
 import { Providers } from "./providers";
 import Nav from '@/components/Nav'
+import ProgressBar from '@/components/Progress';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,12 +32,15 @@ export default function RootLayout({
       </Script>
 
       <body className={`${inter.className}bg-white dark:bg-dusk-black-900`}>
-        <Providers>
-          <main className="min-h-screen overflow-hidden bg-white dark:bg-dusk-black-900 text-dusk-black-900 dark:text-dusk-white" >
+        <ReduxProviders>
+          <Providers>
             <Nav />
-            {children}
-          </main>
-        </Providers>
+            <ProgressBar />
+            <main className="min-h-screen overflow-hidden bg-white dark:bg-dusk-black-900 text-dusk-black-900 dark:text-dusk-white" >
+              {children}
+            </main>
+          </Providers>
+        </ReduxProviders>
       </body>
     </html>
   )
