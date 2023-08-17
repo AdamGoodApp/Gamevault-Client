@@ -7,8 +7,8 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "adamgoodgamevault",
-    "version": "0.1.0"
+    "productName": "Neko Play",
+    "version": "0.2.0"
   },
   "tauri": {
     "allowlist": {
@@ -39,7 +39,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.adamgoodapp.gamevault",
+      "identifier": "com.adamgoodapp.nekoplay",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
