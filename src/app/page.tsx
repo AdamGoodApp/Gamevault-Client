@@ -6,7 +6,7 @@ export default function Home(): ReactElement {
     <div className='h-screen ml-16 p-11'>
       <Header>Home</Header>
     
-      <div className="Library">
+      <div>
       
       </div>
     </div>
